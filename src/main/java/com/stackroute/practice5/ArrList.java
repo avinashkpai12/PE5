@@ -1,23 +1,28 @@
 package com.stackroute.practice5;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArrList {
 
 
 
-    public static List<String> replace(String s, int n){
+    public static List<String> replace(List<String> arrList, String existing, String replacing){
 
-        List<String> list = new ArrayList<String>();
-        list.add("Apple");
-        list.add("Grape");
-        list.add("Melon");
-        list.add("Berry");
+        Iterator it = arrList.iterator();
 
-        list.set(n, s);
+        boolean flag = false;
+        int i=0;
+        while (it.hasNext()){
+            if(it.next().equals(existing)){
+                arrList.set(i,replacing);
+                flag = true;
+            }
+            i++;
+        }
 
-        return list;
+        return arrList;
 
     }
 

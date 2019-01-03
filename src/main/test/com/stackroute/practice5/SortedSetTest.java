@@ -23,7 +23,7 @@ public class SortedSetTest {
     }
 
     @Test
-    public void sort_set() {
+    public void sortSetTest1() {
         HashSet<String> set=new HashSet<>();
         set.add("Alice");
         set.add("Bluto");
@@ -41,7 +41,7 @@ public class SortedSetTest {
     }
 
     @Test
-    public void sort_set1() {
+    public void sortSetTest2() {
         HashSet<String> set=new HashSet<>();
         set.add("Alice");
         set.add("Carner");
@@ -58,36 +58,38 @@ public class SortedSetTest {
         assertEquals("Error",arr,obj.sortSet(set));
     }
     @Test
-    public void sort_set3() {
+    public void sortSetTest3() {
         HashSet<String> set=new HashSet<>();
         set.add("Alice");
         set.add("Carner");
         set.add("Bluto");
         set.add("Harry");
         set.add("Olive");
-        set.add("Keshav");
-        set.add("Kumar");
+        set.add("Nandan");
+        set.add("Nayak");
 
         ArrayList<String> arr=new ArrayList<>();
         arr.add("Alice");
         arr.add("Bluto");
         arr.add("Carner");
         arr.add("Harry");
-        arr.add("Keshav");
-        arr.add("Kumar");
+        arr.add("Nandan");
+        arr.add("Nayak");
         arr.add("Olive");
         assertEquals("Error",arr,obj.sortSet(set));
     }
+
+
     @Test
-    public void sort_setFailure() {
+    public void sortSetFailure() {
         HashSet<String> set=new HashSet<>();
         set.add("Alice");
         set.add("Carner");
         set.add("Bluto");
         set.add("Harry");
         set.add("Olive");
-        set.add("Keshav");
-        set.add("Kumar");
+        set.add("Nandan");
+        set.add("Nayak");
 
         assertNotNull("Error",obj.sortSet(set));
 

@@ -22,14 +22,70 @@ public class ArrListTest {
     }
 
     @Test
-    public void testArrList() throws Exception{
+    public void testArrListTest1() throws Exception{
 
-        List<String> list = new ArrayList<String>();
-        list.add("Kiwi");
-        list.add("Grape");
-        list.add("Melon");
-        list.add("Berry");
+        List<String > sendList = new ArrayList<String>();
+        sendList.add("Apple");
+        sendList.add("Grape");
+        sendList.add("Melon");
+        sendList.add("Berry");
 
-        assertEquals(list, arrList.replace("Kiwi", 0));
+        List<String> expectedList = new ArrayList<String>();
+        expectedList.add("Kiwi");
+        expectedList.add("Grape");
+        expectedList.add("Melon");
+        expectedList.add("Berry");
+
+        assertEquals(expectedList, arrList.replace(sendList, "Apple", "Kiwi"));
     }
+
+    @Test
+    public void testArrListTest2(){
+
+        List<String > sendList = new ArrayList<String >();
+
+        List<String > expextedList = new ArrayList<String>();
+
+
+        assertEquals(expextedList, arrList.replace(sendList,"Apple", "Kiwi"));
+    }
+
+    @Test
+    public void testArrListTest3() throws Exception{
+
+        List<String > sendList = new ArrayList<String>();
+        sendList.add("Mango");
+        sendList.add("Grape");
+        sendList.add("Melon");
+        sendList.add("Berry");
+
+        List<String> expectedList = new ArrayList<String>();
+        expectedList.add("Mango");
+        expectedList.add("Grape");
+        expectedList.add("Melon");
+        expectedList.add("Berry");
+
+        assertEquals(expectedList, arrList.replace(sendList, "Apple", "Kiwi"));
+    }
+
+
+    @Test
+    public void testArrListTest4() throws Exception{
+
+        List<String > sendList = new ArrayList<String>();
+        sendList.add("Mango");
+        sendList.add("Grape");
+        sendList.add("Melon");
+        sendList.add("Berry");
+
+        List<String> expectedList = new ArrayList<String>();
+        expectedList.add("Mango");
+        expectedList.add("");
+        expectedList.add("Melon");
+        expectedList.add("Berry");
+
+        assertEquals(expectedList, arrList.replace(sendList, "Grape", ""));
+    }
+
+
 }
